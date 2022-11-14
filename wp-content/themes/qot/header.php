@@ -29,7 +29,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
+<?php wp_body_open(); ?> 
 
 <header>
    <div class="head-menu">
@@ -37,27 +37,37 @@
            <div class="content-menu">
                <div class="row align-items-center">
                    <div class="col-md-3 col-sm-6 col-6">
-                       <div class="logo"><a href=""><img src="<?php bloginfo( 'stylesheet_directory' ); ?>/assets/images/logo.png" class="img-fluid" alt=""></a></div>
+                       <div class="logo"><a href=""><img src="<?php echo the_field('logo_header','option')['url'] ?>" class="img-fluid" alt=""></a></div>
                    </div>
                    <div class="col-md-9 col-sm-6 col-6">
                        <div class="btn-bar d-none text-right"><a href="javascript:void(0)"><img src="<?php bloginfo( 'stylesheet_directory' ); ?>/assets/images/h-bar.png" class="img-fluid" alt=""></a></div>
                        <div class="h-menu">
-                           <ul>
+                          <?php
+                            wp_nav_menu(
+                              array(
+                                'theme_location' => 'menu',
+                                'menu_id'        => 'primary-menu',
+                              )
+                            ); 
+                          ?>
+                           <!-- <ul>
                                <li><a href="">Concept</a></li>
                                <li><a href="">Vind een kot</a></li>
                                <li><a href="">Blog</a></li>
                                <li><a href="">Contact</a></li>
                                <li><a href=""><img src="<?php bloginfo( 'stylesheet_directory' ); ?>/assets/images/h-bar.png" class="img-fluid" alt=""></a></li>
-                           </ul>
+                           </ul> -->
                        </div>
                        <div class="menu-mobile">
                            <div class="close-menu"><a href="javascript:void(0)">&times;</a></div>
-                           <ul>
-                               <li><a href="">Concept</a></li>
-                               <li><a href="">Vind een kot</a></li>
-                               <li><a href="">Blog</a></li>
-                               <li><a href="">Contact</a></li>
-                           </ul>
+                           <?php
+                              wp_nav_menu(
+                                array(
+                                  'theme_location' => 'menu',
+                                  'menu_id'        => 'primary-menu',
+                                )
+                              ); 
+                            ?>
                        </div>
                    </div>
                </div>

@@ -16,7 +16,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-4">
-                    <div class="logo"><a href=""><img src="<?php bloginfo( 'stylesheet_directory' ); ?>/assets/images/logo-blue.png" class="img-fluid" alt=""></a></div>
+                    <div class="logo"><a href=""><img src="<?php echo the_field('logo_footer','option')['url'] ?>" class="img-fluid" alt=""></a></div>
                 </div>
                 <div class="col-md-8">
                     <div class="fter-menu">
