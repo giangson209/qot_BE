@@ -750,6 +750,18 @@ footer {
   height: 100%;
   background: #e37d4a;
 }
+.item-project.comming {
+  pointer-events: none;
+}
+.item-project.comming .avarta {
+  pointer-events: none;
+}
+.item-project.comming .avarta img {
+  filter: blur(5px);
+}
+.item-project.comming .btn-view {
+  display: none;
+}
 .item-project a {
   color: #fff;
 }
@@ -1728,12 +1740,12 @@ footer {
   .item-concept.content-2 {
     margin: 24px 0 0 0;
   }
-}
-.item-concept.content-2 .col-md-6:first-child {
-  order: 2;
-}
-.item-concept.content-2 .col-md-6:last-child {
-  order: 1;
+  .item-concept.content-2 .col-md-6:first-child {
+    order: 2;
+  }
+  .item-concept.content-2 .col-md-6:last-child {
+    order: 1;
+  }
 }
 .item-concept .row {
   margin: 0;
